@@ -3,7 +3,7 @@
     Plugin Name: PGateWC
     Author: Mark E. Greene
     Author URI: www.avant5.com
-    Version: 0.0.2
+    Version: 0.0.3
     Description: PGateWC : Paypal REST API Gateway for WooCommerce
 
     @avant5
@@ -292,7 +292,7 @@ function pgatewc_main() {
                     
                           $result = $payment->execute($execution, $this->apiContext);
                           $json = json_decode($result,true);
-                          $transactionID = $json['transactions'][0][related_resources][0]['sale']['id'];
+                          $transactionID = $json['transactions'][0]['related_resources'][0]['sale']['id'];
                           //$order->add_order_note($result); // DEBUG
                           
                     } catch (Exception $ex) { 
